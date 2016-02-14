@@ -28,6 +28,7 @@ class App extends React.Component {
     )
   }
 }
+
 //
 //const counter = (state = {val: 0, thing: 'a'}, action) => {
 //  console.log('state', state);

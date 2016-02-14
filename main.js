@@ -12,11 +12,11 @@ let getStorage = function (key) {
 };
 
 let setState = function (state) {
-  setStorage('state', state);
+  setStorage('state', JSON.stringify(state));
 }
 
 let getState = function () {
-  return getStorage('state') || '';
+  return JSON.parse(getStorage('state')) || '';
 }
 
 const header = (state = {cardIdx: 0}, action) => {
@@ -54,8 +54,8 @@ const header = (state = {cardIdx: 0}, action) => {
       return state;
 
     default:
-      console.log('in swith set');
-      return state = {
+      console.log('in swith set', getState());
+      return state = getState() || {
         cardIdx: 0,
         showQuestion: true
       };

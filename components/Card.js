@@ -5,10 +5,11 @@ import { createStore } from 'redux';
 class Card extends React.Component {
   componentWillMount () {
     console.log('PROPS IN HEADER', this.props);
+
   }
 
   componentDidMount () {
-
+    this.addEditor();
   }
 
   onIncrement () {
@@ -24,9 +25,19 @@ class Card extends React.Component {
                               })
   }
 
+  addEditor (value) {
+    console.log('add editor!!LK:HG VYGIU L GIHIU ');
+    CodeMirror(document.getElementById('editor'), {
+      value: value || "function myScript(){\n}\n",
+      mode: "javascript",
+      lineNumbers: true
+    })
+  }
+
   clearTextArea () {
     console.log('content area text', this.input.innerText);
     this.input.innerText = '';
+    this.addEditor('');
   }
   cardHtml(content, buttonAction, buttonText) {
     return (
@@ -37,8 +48,10 @@ class Card extends React.Component {
         </div>
         <h3>Your Answer:</h3>
         <div contentEditable="true"
+             id="editor"
              className="card-text card-text-container"
-             ref={(ref) => this.input = ref}></div>
+             ref={(ref) => this.input = ref}>
+        </div>
         <button onClick={this[buttonAction].bind(this)} className="card-submit">
           {buttonText}
         </button>
