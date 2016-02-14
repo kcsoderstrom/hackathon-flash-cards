@@ -32,7 +32,7 @@ class Card extends React.Component {
     for (var i = 0; i < this.props.count; i++) {
       isDone = i < this.props.currentCard ? " done" : "";
       isCurrent = i === this.props.currentCard ? " current" : "";
-     list.push(<div className={"card-list-item" + isDone + isCurrent}
+     list.push(<div key={i} className={"card-list-item" + isDone + isCurrent}
                     onClick={(e) => this.goToCard(e)}>{i + 1}</div>)
     }
 
