@@ -1,0 +1,3 @@
+module.exports = {
+    scss: '/Desktop/projects/electron-apps/menubar/components/**/*.scss'
+}
