@@ -37,6 +37,8 @@ contents = re.sub(r"(Cracking the Coding Interview)|(CareerCup\.com)", "", conte
 jsontents = re.split("\n\n\n+", contents)
 jsontents = 'wwwwwwwwwwwwwwwwww'.join(jsontents)
 jsontents = re.split("wwwwwwwwwwwwwwwwww|pg\s\d+", jsontents)
+jsontents = [re.sub("^\s+|\s+$", "", str) for str in jsontents]
+jsontents = [str for str in jsontents if len(str) != 0]
 asjson = []
 for idx, val in enumerate(jsontents):
 	if(idx % 2 == 0 and idx < len(jsontents) - 1):
