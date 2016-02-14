@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import sys, re
+import sys, re, json
 from pyPdf import PdfFileReader
 
 
@@ -32,15 +32,23 @@ contents = re.sub("»\n", "» ", contents);
 contents = re.sub(r"\|.+", "", contents);
 contents = re.sub(r"(Cracking the Coding Interview)|(CareerCup\.com)", "", contents);
 
-#contents = re.sub(r"\n+?\s+", "\n", contents)
-#sys.exit(0)
-# .encode('utf-8')
-# print contents
-# exit
+# Build json
+jsontents = re.split("\n\n(?=[.|\n]+?pg\s\d+)|pg\s\d+", contents)
+asjson = []
+for idx, val in enumerate(jsontents):
+	if(idx % 2 == 0 and idx < len(jsontents) - 1):
+		asjson.append({
+			"question": jsontents[idx],
+			"answer": jsontents[idx + 1]
+		})
+jsonstr = json.dumps(asjson)
+
 g = open('parsed.txt', 'w')
-#for character in contents:
-#  sys.stdout.write(character)
-#  sys.stdout.flush()
 g.write(contents)
+
+h = open('parsed.json', 'w')
+h.write(jsonstr)
+
 f.close()
 g.close()
+h.close()
