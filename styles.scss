@@ -37,7 +37,13 @@ body {
   }
 
   .card-question {
-    min-height: 190px;
+    height: 250px;
+
+    > div {
+      white-space: pre-wrap;
+      height: 100%;
+      overflow: scroll;
+    }
   }
 
   .card-text{

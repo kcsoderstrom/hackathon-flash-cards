@@ -33,7 +33,7 @@ class Card extends React.Component {
       <div className="card-container">
         <h3>{this.props.store.getState().showQuestion ? "Question:" : "Answer:"}</h3>
         <div className="card-text card-question">
-          {content}
+          <div>{content}</div>
         </div>
         <h3>Your Answer:</h3>
         <div contentEditable="true"
