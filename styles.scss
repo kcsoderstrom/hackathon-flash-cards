@@ -28,8 +28,22 @@ body {
   margin: 40px auto;
   box-sizing: border-box;
 
+  h2, h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 27px;
+    padding: 10px 0 5px 0;
+    color: #777;
+    margin: 0;
+  }
+
   .card-question {
-    min-height: 190px;
+    height: 250px;
+
+    > div {
+      white-space: pre-wrap;
+      height: 100%;
+      overflow: scroll;
+    }
   }
 
   .card-text{
@@ -48,9 +62,9 @@ body {
     border: none;
     background: #eee;
     height: 44px;
-    color: #999;
+    color: #777;
     border-radius: 8px;
-    font-size: 20px;
+    font-size: 23px;
     width: 100%
   }
 }

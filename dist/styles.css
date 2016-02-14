@@ -28,24 +28,36 @@ body {
   margin: 40px auto;
   box-sizing: border-box; }
   /* line 31, stdin */
+  .card-container h2, .card-container h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 27px;
+    padding: 10px 0 5px 0;
+    color: #777;
+    margin: 0; }
+  /* line 39, stdin */
   .card-container .card-question {
-    min-height: 190px; }
-  /* line 35, stdin */
+    height: 250px; }
+    /* line 42, stdin */
+    .card-container .card-question > div {
+      white-space: pre-wrap;
+      height: 100%;
+      overflow: scroll; }
+  /* line 49, stdin */
   .card-container .card-text {
     background: #eee;
     padding: 30px;
     margin-bottom: 20px;
     box-sizing: border-box; }
-  /* line 42, stdin */
+  /* line 56, stdin */
   .card-container .card-text-container {
     min-height: 250px; }
-  /* line 46, stdin */
+  /* line 60, stdin */
   .card-container .card-submit {
     cursor: pointer;
     border: none;
     background: #eee;
     height: 44px;
-    color: #999;
+    color: #777;
     border-radius: 8px;
-    font-size: 20px;
+    font-size: 23px;
     width: 100%; }
