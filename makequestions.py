@@ -27,13 +27,16 @@ contents = re.sub("˚", "fl", contents);
 contents = re.sub(r"(\n-\n)|(\n-)|(-\n)", "-", contents);
 contents = re.sub(r"(?<=\n\d\. )\n", " ", contents);
 contents = re.sub("»\n", "» ", contents);
+contents = re.sub(r"^\n+", "", contents);
 
 # Remove headings that split pages
 contents = re.sub(r"\|.+", "", contents);
 contents = re.sub(r"(Cracking the Coding Interview)|(CareerCup\.com)", "", contents);
 
 # Build json
-jsontents = re.split("\n\n(?=[.|\n]+?pg\s\d+)|pg\s\d+", contents)
+jsontents = re.split("\n\n\n+", contents)
+jsontents = 'wwwwwwwwwwwwwwwwww'.join(jsontents)
+jsontents = re.split("wwwwwwwwwwwwwwwwww|pg\s\d+", jsontents)
 asjson = []
 for idx, val in enumerate(jsontents):
 	if(idx % 2 == 0 and idx < len(jsontents) - 1):
