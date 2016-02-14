@@ -1,0 +1,51 @@
+/* line 1, stdin */
+html, body {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box; }
+
+/* line 7, stdin */
+body {
+  border-top: 1px solid transparent; }
+
+/* line 11, stdin */
+.header {
+  background: #eee;
+  border-bottom: 1px solid #ddd;
+  height: 50px;
+  font-family: 'Raleway', sans-serif; }
+  /* line 17, stdin */
+  .header h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 27px;
+    padding: 15px 0 0 20px;
+    color: #777;
+    margin: 0; }
+
+/* line 26, stdin */
+.card-container {
+  width: 550px;
+  margin: 40px auto;
+  box-sizing: border-box; }
+  /* line 31, stdin */
+  .card-container .card-question {
+    min-height: 190px; }
+  /* line 35, stdin */
+  .card-container .card-text {
+    background: #eee;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-sizing: border-box; }
+  /* line 42, stdin */
+  .card-container .card-text-container {
+    min-height: 250px; }
+  /* line 46, stdin */
+  .card-container .card-submit {
+    cursor: pointer;
+    border: none;
+    background: #eee;
+    height: 44px;
+    color: #999;
+    border-radius: 8px;
+    font-size: 20px;
+    width: 100%; }

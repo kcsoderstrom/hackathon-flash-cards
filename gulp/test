@@ -1,0 +1,63 @@
+// var $main = $('#main');
+// var $el;
+// var squareWidth = 50;
+// var rowLength = 10
+// var numberOfRows = 10;
+var colors = [
+  'black',
+ 'blue',
+  'cyan',
+  'green',
+  'magenta',
+  'red',
+  'yellow'
+];
+
+// var colorIdx = 0;
+// var getColor = function () {
+//   var color = colors[colorIdx];
+//   colorIdx = (colorIdx + 1) % colors.length;
+//   return color;
+// }
+
+// var clicked = function (e) {
+//   var target = $(e.currentTarget)
+//   var paragraph = target.find('p')
+//   var text = paragraph.text();
+//   var newColor = colors[colors.indexOf(text) + 1];
+//   paragraph.text(newColor);
+//   target.css('background', newColor);
+// }
+
+// var createP = function (color) {
+//   return $('<p>').text(color);
+// }
+
+// var createSquare = function(color) {
+//   var el = $('<div>').addClass('square')
+//                    .css({'background': color});
+//   el.append(createP(color));
+//   return el;
+// }
+
+// var getTotalSquares = function () {
+//   return rowLength * numberOfRows;
+// }
+
+// var setMainSize = function () {
+//   var maxWidth = rowLength * squareWidth;
+//   $main.css('max-width', maxWidth);
+// }
+
+// var makeGrid = function () {
+//   setMainSize();
+//   for (var i = 0; i < getTotalSquares(); i++) {
+//     $main.append(
+//       createSquare(getColor())
+//     );
+//   }
+// }
+
+// makeGrid();
+
+// $('.square').click(clicked);
