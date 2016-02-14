@@ -38,8 +38,8 @@ asjson = []
 for idx, val in enumerate(jsontents):
 	if(idx % 2 == 0 and idx < len(jsontents) - 1):
 		asjson.append({
-			"question": jsontents[idx],
-			"answer": jsontents[idx + 1]
+			"question": re.sub("^\s+|\s+$", "", jsontents[idx]),
+			"answer": re.sub("^\s+|\s+$", "", jsontents[idx + 1])
 		})
 jsonstr = json.dumps(asjson)
 
