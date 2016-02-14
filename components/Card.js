@@ -31,9 +31,11 @@ class Card extends React.Component {
   cardHtml(content, buttonAction, buttonText) {
     return (
       <div className="card-container">
+        <h3>{this.props.store.getState().showQuestion ? "Question:" : "Answer:"}</h3>
         <div className="card-text card-question">
           {content}
         </div>
+        <h3>Your Answer:</h3>
         <div contentEditable="true"
              className="card-text card-text-container"
              ref={(ref) => this.input = ref}></div>
