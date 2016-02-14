@@ -43,6 +43,7 @@ asjson = []
 for idx, val in enumerate(jsontents):
 	if(idx % 2 == 0 and idx < len(jsontents) - 1):
 		asjson.append({
+			"id": idx,
 			"question": re.sub("^\s+|\s+$", "", jsontents[idx]),
 			"answer": re.sub("^\s+|\s+$", "", jsontents[idx + 1])
 		})
