@@ -35,23 +35,24 @@ body {
     color: #777;
     margin: 0; }
   /* line 39, stdin */
-  .card-container .card-question {
-    height: 250px; }
-    /* line 42, stdin */
-    .card-container .card-question > div {
-      white-space: pre-wrap;
-      height: 100%;
-      overflow: scroll; }
-  /* line 49, stdin */
   .card-container .card-text {
     background: #eee;
     padding: 30px;
     margin-bottom: 20px;
     box-sizing: border-box; }
-  /* line 56, stdin */
+  /* line 46, stdin */
+  .card-container .card-question {
+    height: 250px;
+    margin-bottom: 0; }
+    /* line 50, stdin */
+    .card-container .card-question > div {
+      white-space: pre-wrap;
+      height: 100%;
+      overflow: scroll; }
+  /* line 57, stdin */
   .card-container .card-text-container {
     min-height: 250px; }
-  /* line 60, stdin */
+  /* line 61, stdin */
   .card-container .card-submit {
     cursor: pointer;
     border: none;
@@ -61,3 +62,26 @@ body {
     border-radius: 8px;
     font-size: 23px;
     width: 100%; }
+
+/* line 73, stdin */
+.card-list-container {
+  padding: 10px 20px; }
+  /* line 76, stdin */
+  .card-list-container > div {
+    display: flex;
+    overflow: scroll; }
+
+/* line 82, stdin */
+.card-list-item {
+  display: inline-block;
+  background: #eee;
+  height: 30px;
+  min-width: 30px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  padding-top: 6px;
+  box-sizing: border-box;
+  text-align: center; }
+  /* line 93, stdin */
+  .card-list-item.done {
+    background: cornflowerblue; }

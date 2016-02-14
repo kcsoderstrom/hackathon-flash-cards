@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import Header from './Header';
 import Card from './Card';
+import CardList from './CardList';
 import data from '../data';
 
 console.log('data', data);
@@ -24,6 +25,7 @@ class App extends React.Component {
     return (
       <div>
         <Header store={this.props.store}/>
+        <CardList store={this.props.store} count={data.cards.length}/>
         <Card currentCard={this.getCard()} store={this.props.store} />
       </div>
 

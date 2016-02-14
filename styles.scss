@@ -25,7 +25,7 @@ body {
 
 .card-container {
   width: 550px;
-  margin: 40px auto;
+  margin: 0px auto;
   box-sizing: border-box;
 
   h2, h3 {
@@ -36,21 +36,22 @@ body {
     margin: 0;
   }
 
+  .card-text {
+    background: #eee;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+
   .card-question {
     height: 250px;
+    margin-bottom: 0;
 
     > div {
       white-space: pre-wrap;
       height: 100%;
       overflow: scroll;
     }
-  }
-
-  .card-text{
-    background: #eee;
-    padding: 30px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
   }
 
   .card-text-container {
@@ -66,5 +67,30 @@ body {
     border-radius: 8px;
     font-size: 23px;
     width: 100%
+  }
+}
+
+.card-list-container {
+  padding: 10px 20px;
+
+  > div {
+    display: flex;
+    overflow: scroll;
+  }
+}
+
+.card-list-item {
+  display: inline-block;
+  background: #eee;
+  height: 30px;
+  min-width: 30px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  padding-top: 6px;
+  box-sizing: border-box;
+  text-align: center;
+
+  &.done {
+    background: cornflowerblue;
   }
 }
