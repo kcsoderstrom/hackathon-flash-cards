@@ -11,16 +11,11 @@ class Card extends React.Component {
 
   }
 
-  onIncrement () {
-    this.clearTextArea();
+  goToCard (e) {
+    console.log(e.currentTarget.innerText);
     this.props.store.dispatch({
-                                type: 'INCREMENT_CARD'
-                              })
-  }
-
-  showAnswer () {
-    this.props.store.dispatch({
-                                type: 'SHOW_ANSWER'
+                                type: 'SET_CARD_IDX',
+                                data: {idx: e.currentTarget.innerText}
                               })
   }
 
@@ -31,8 +26,14 @@ class Card extends React.Component {
 
   cardList () {
     let list = [];
+    let isDone;
+    let isCurrent;
+
     for (var i = 0; i < this.props.count; i++) {
-     list.push(<div className="card-list-item">{i + 1}</div>)
+      isDone = i < this.props.currentCard ? " done" : "";
+      isCurrent = i === this.props.currentCard ? " current" : "";
+     list.push(<div className={"card-list-item" + isDone + isCurrent}
+                    onClick={(e) => this.goToCard(e)}>{i + 1}</div>)
     }
 
     return list;

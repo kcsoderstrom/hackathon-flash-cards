@@ -25,7 +25,7 @@ body {
 
 .card-container {
   width: 550px;
-  margin: 0px auto;
+  margin: 0 auto;
   box-sizing: border-box;
 
   h2, h3 {
@@ -80,6 +80,7 @@ body {
 }
 
 .card-list-item {
+  cursor: pointer;
   display: inline-block;
   background: #eee;
   height: 30px;
@@ -91,6 +92,10 @@ body {
   text-align: center;
 
   &.done {
-    background: cornflowerblue;
+    background: lightblue;
+  }
+
+  &.current {
+    background: indianred;
   }
 }

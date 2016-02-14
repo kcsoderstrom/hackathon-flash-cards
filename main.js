@@ -3,24 +3,58 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import { createStore } from 'redux';
 
+let setStorage = function (key, val) {
+  window.localStorage.setItem(key, val);
+};
+
+let getStorage = function (key) {
+  return window.localStorage.getItem(key);
+};
+
+let setState = function (state) {
+  setStorage('state', state);
+}
+
+let getState = function () {
+  return getStorage('state') || '';
+}
+
 const header = (state = {cardIdx: 0}, action) => {
-  console.log('state', state);
+
   switch (action.type) {
+
     case 'INCREMENT_CARD':
       state = Object.assign({}, state, {
         cardIdx: state.cardIdx + 1,
         showQuestion: true
       });
+
+      setState(state);
       return state;
+
     case 'SHOW_ANSWER':
       state = Object.assign({}, state, {
         showQuestion: false
       });
+
+      setState(state);
       return state;
+
     case 'ADD_DATA':
       console.log('data data', state, action);
       return;
+
+    case 'SET_CARD_IDX':
+      state = Object.assign({}, state, {
+        cardIdx: +action.data.idx - 1,
+        showQuestion: true
+      });
+
+      setState(state);
+      return state;
+
     default:
+      console.log('in swith set');
       return state = {
         cardIdx: 0,
         showQuestion: true

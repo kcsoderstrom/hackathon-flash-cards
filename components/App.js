@@ -10,12 +10,7 @@ console.log('data', data);
 
 class App extends React.Component {
   componentWillMount() {
-    console.log('app componenet will mount!!!!!!!!', this.props);
-    //this.props.store.dispatch({
-    //  type: 'ADD_DATA',
-    //  data: {data: data}
-    //                          });
-    //this.props['data'] = data;
+      console.log('mouted app');
   }
 
   getCard () {
@@ -25,7 +20,8 @@ class App extends React.Component {
     return (
       <div>
         <Header store={this.props.store}/>
-        <CardList store={this.props.store} count={data.cards.length}/>
+        <CardList store={this.props.store} count={data.cards.length}
+                  currentCard={this.props.store.getState().cardIdx}/>
         <Card currentCard={this.getCard()} store={this.props.store} />
       </div>
 
